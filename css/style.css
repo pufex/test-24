@@ -1,0 +1,220 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 229, 206);
+}
+
+.container{
+    display: block;
+    width: 100%;
+}
+
+.container__item{
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 10%)
+}
+
+.nav{
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    background-color: #deb887;
+}
+
+.nav__bar{
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0.25rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 10%);
+    
+    background-color: transparent;
+}
+
+.nav__item{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden;
+    justify-content: right;
+}
+
+.nav__item--left{
+    justify-content: flex-start;
+}
+.nav__item--right{
+    justify-content: flex-end;
+}
+
+.nav--button-element{
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,50%);
+    height: 100%;
+    transition-property: background-color, color;
+    transition-timing-function: linear;
+    transition-duration: 0.25s;
+    background-color: cornsilk;
+    cursor: pointer;
+}
+
+.nav__button--margin-left{
+    margin-left: 0.15rem;
+}
+
+.nav__button--margin-right{
+    margin-right: 0.15rem;
+}
+
+.nav__button:hover{
+    background-color: seashell;
+}
+
+.nav__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 42px;
+    padding: 0;
+    font-size: 1rem;
+    
+}
+
+.nav__button--extended{
+    display: none;
+}
+
+.nav__logo-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 42px;
+    text-decoration: none;
+    color: limegreen;
+    background-color: rgb(235, 235, 235);
+
+    font-size: 1.5rem;
+}
+
+.nav__logo-button:hover{
+    color: blue;
+    background-color: white;
+}
+
+
+.nav__icon--red{
+    color: red;
+}
+
+.nav__icon--navy{
+    color: navy;
+}
+
+.nav__icon--darkgreen{
+    color: darkgreen;
+}
+
+.header{
+    position: absolute;
+    top: 50px;
+    display: block;
+    height: 350px;
+    background-color: #ab885a;
+}
+
+.header-intro{
+    height: 100%;
+    background-image: url('../img/pensioner-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: 70%;
+    
+    padding: 1.25rem 0.75rem;
+    
+}
+
+.header-intro__header{
+    color: yellow;
+    text-shadow: 1px 1px 5px black;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+}
+
+@media (min-width: 550px){
+    
+    .nav__button--hamburger{
+        display: none;  
+    }
+    
+    .nav__button--extended{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: saddlebrown;
+        width: 100px;
+        font-weight: 500;
+    }
+    
+    .nav__button--extended:hover{
+        background-color: seashell;
+        color: red;
+    }
+    
+    .header-intro{
+        background-position-y: 80%;
+        padding: 1.25rem 1rem;
+        
+    }
+    
+    .header-intro__header{
+        font-size: 2.5rem;
+        
+    }
+    
+}
+
+@media (min-width: 768px){
+    
+    .header-intro{
+        background-image: url(../img/pensioner-desktop.jpg);
+    }
+    
+    .nav__item{
+        flex-basis: 50%;
+    }
+    
+    .nav__button--extended{
+        flex-basis: 30%;
+    }
+    
+    .header-intro{
+        padding: 1.25rem 1.5rem;
+
+    }
+
+    .header-intro__header{
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1024px){
+    .container__item{
+        border-left: 1px solid rgba(0, 0, 0, 10%);
+        border-right: 1px solid rgba(0, 0, 0, 10%);
+    }
+}
