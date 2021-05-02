@@ -1,3 +1,11 @@
+/* 
+
+font-family: 'Lato', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+
+*/
+
 html, body{
     margin: 0;
     padding: 0;
@@ -8,13 +16,15 @@ html, body{
 
 .container{
     display: block;
-    width: 100%;
+    width: 100%;;
+    overflow-x: hidden;
 }
 
 .container__item{
     box-sizing: border-box;
     display: block;
     width: 100%;
+    height: 100%;
     max-width: 1024px;
     margin: 0 auto;
     border-bottom: 1px solid rgba(0, 0, 0, 10%)
@@ -127,22 +137,27 @@ html, body{
 }
 
 .header{
-    position: absolute;
-    top: 50px;
+    margin-top: 50px;
     display: block;
-    height: 350px;
+    height: 400px;
     background-color: #ab885a;
 }
 
 .header-intro{
     height: 100%;
-    background-image: url('../img/pensioner-mobile.jpg');
+    background: linear-gradient(rgba(0,0,0,40%), rgba(0,0,0,40%)),
+    url('../img/pensioner-mobile.jpg');
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
     background-position-y: 70%;
     
-    padding: 1.25rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1.25rem;
     
 }
 
@@ -150,12 +165,140 @@ html, body{
     color: yellow;
     text-shadow: 1px 1px 5px black;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.25rem;
     margin: 0;
 }
 
+.header-intro__buttons{
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+.header-intro__button-container{
+    display: flex;
+    justify-content: center;
+
+    flex-basis: 100%;
+    box-sizing: border-box;
+    padding: 0.25rem 0 0.25rem 0;
+}
+
+/* .header-intro__button::before{
+    content: "";
+    position: absolute;
+    box-sizing: ;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    background-color: blue;
+} */
+
+.header-intro__button{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding: 0.7rem;
+    width: 100%;
+    max-width: 350px;
+
+    text-decoration: none;
+    color: saddlebrown;
+    background-color: #fff8dc;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    border: 1px solid rgba(0,0,0,70%);
+
+    transition-property: background-color, color;
+    transition-timing-function: linear;
+    transition-duration: 0.25s;
+}
+
+.header-intro__button:hover{
+    background-color: seashell;
+    color: red;
+}
+
+.articles{
+    background-color: transparent;
+}
+
+.article{
+    border: 0;
+}
+
+.article__padding{
+    padding: 1.5rem 1.5rem;
+}
+
+.article__container{
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    border-bottom: 0;
+}
+
+.article__container--collumns{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.article__container--bg-light{
+    background-color: floralwhite;
+}
+
+.article__container--bg-dark{
+    background-color: #cbb39d;
+}
+
+
+.article__container--bg-
+
+.article__item{
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+}
+
+.article__item--collumn{
+    flex-basis: 100%;
+}
+
+.article__header{
+    font-size: 1.75rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.article__header--light{
+    color:  navy;
+}
+
+.article__header--dark{
+    color:  black;
+}
+
+.article__paragraph{
+    font-size: 1rem;
+}
+
+.article__paragraph--light{
+    color: black;
+}
+
+.article__paragraph--dark{
+    color: seashell;
+}
+
+
+
 @media (min-width: 550px){
-    
+
     .nav__button--hamburger{
         display: none;  
     }
@@ -186,12 +329,31 @@ html, body{
         
     }
     
+    .header-intro__button{
+        padding: 0.55rem;
+    }
+
+    /* .header-intro__button-container{
+        flex-basis: 50%;
+        box-sizing: border-box;
+        padding: 0 0.25rem 0 0.25rem;
+    } */
+
+    .article__padding{
+        padding: 1.5rem 2rem;
+    }
+
 }
 
 @media (min-width: 768px){
     
     .header-intro{
-        background-image: url(../img/pensioner-desktop.jpg);
+        background: linear-gradient(rgba(0,0,0,40%), rgba(0,0,0,40%)),
+        url('../img/pensioner-desktop.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: 80%;
     }
     
     .nav__item{
@@ -210,6 +372,19 @@ html, body{
     .header-intro__header{
         font-size: 3rem;
     }
+
+    .header-intro__button{
+        padding: 0.4rem;
+    }
+
+    .article__padding{
+        padding: 1.5rem 2.5rem;
+    }
+
+    .article__item--collumn{
+        flex-basis: 50%;
+    }
+
 }
 
 @media (min-width: 1024px){
